@@ -1,6 +1,7 @@
 import json
 import random
 import datetime
+import os
 
 
 def get_random_file_line(file_name):
@@ -51,25 +52,29 @@ def get_user_work_experience(university_start_year):
     return work_experience
 
 
+users = []
 first_names_file = 'dictionaries/first_names.csv'
 last_names_file = 'dictionaries/last_names.csv'
 university_file = 'dictionaries/universities.csv'
-user = {}
-user['first_name'] = get_random_file_line(first_names_file)
-user['last_name'] = get_random_file_line(last_names_file)
-age = random.randint(22, 55)
-user['age'] = age
+for counter in range(1, 10):
+    user = {}
+    user['first_name'] = get_random_file_line(first_names_file)
+    user['last_name'] = get_random_file_line(last_names_file)
+    age = random.randint(22, 55)
+    user['age'] = age
+    university_start_year = get_university_start_year(age)
+    user['education'] = get_user_education_info(university_start_year)
+    job = {}
+    job['company'] = 'Grid Gain'
+    workExperience = []
+    workExperience.append(job)
+    user['work_experience'] = workExperience
+    users.append(user)
 
-university_start_year = get_university_start_year(age)
-user['education'] = get_user_education_info(university_start_year)
+jsonData = json.dumps(users)
 
-job = {}
-job['company'] = 'Grid Gain'
-workExperience = []
-workExperience.append(job)
-user['work_experience'] = workExperience
-
-jsonData = json.dumps(user)
-
+data_path = os.curdir + '\data'
+if not os.path.exists(data_path):
+    os.makedirs(data_path)
 output = open('data/users.json', 'w')
 output.write(jsonData)

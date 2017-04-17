@@ -1,4 +1,4 @@
-1)PUT localhost:9200/users
+1)PUT localhost:9200/candidates
 {
   "mappings": {
     "external": {
