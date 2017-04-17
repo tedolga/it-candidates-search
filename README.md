@@ -1,4 +1,7 @@
-1)PUT localhost:9200/candidates
+### Index ###
+
+```
+PUT localhost:9200/candidates
 {
   "mappings": {
     "external": {
@@ -19,7 +22,11 @@
     }
   }
 }
-NESTED query to search
+```
+
+### NESTED query to search ###
+
+```
 {
     "query": {
         "nested" : {
@@ -36,3 +43,4 @@ NESTED query to search
         }
     }
 }
+```
