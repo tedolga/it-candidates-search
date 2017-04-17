@@ -1,6 +1,6 @@
 package com.roi.poc.dto;
 
-public class CandidateDto {
+public class Candidate {
     private String firstName;
     private String lastName;
 
