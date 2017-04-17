@@ -18,11 +18,11 @@ import java.util.List;
 public class SearchController {
     @RequestMapping(value = "/name_search", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Collection<Candidate> searchCandidatesByName(@RequestParam String query) {
-        List<Candidate> candidateDtos = new ArrayList<Candidate>();
-        Candidate vasya = new Candidate();
-        vasya.setFirstName("Vasya");
-        vasya.setLastName("Pupkin");
-        candidateDtos.add(vasya);
-        return candidateDtos;
+        List<Candidate> candidates = new ArrayList<Candidate>();
+        Candidate dude = new Candidate();
+        dude.setFirstName("Vasya");
+        dude.setLastName("Pupkin");
+        candidates.add(dude);
+        return candidates;
     }
 }
