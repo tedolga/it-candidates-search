@@ -1,0 +1,53 @@
+{
+  "id": "1",
+  "first_name": "Jack",
+  "last_name": "Ford",
+  "age": "31",
+  "work experience": [
+    {
+      "state": "CA",
+      "city": "San Francisco",
+      "company": "Grid Gain",
+      "position": "Senior Java Developer",
+      "start_date": "2016/12",
+      "end_date": "",
+      "current_position": "true",
+      "technologies": [
+        "Java SE"
+      ]
+    },
+    {
+      "state": "CA",
+      "city": "San Francisco",
+      "company": "Grid Dynamics",
+      "position": "Java Developer",
+      "start_date": "2014/12",
+      "end_date": "2012/04",
+      "current_position": "false",
+      "technologies": [
+        "Java SE",
+        "Java EE",
+        "Hibernate",
+        "Spring",
+        "JBoss"
+      ]
+    }
+  ],
+  "skills": [
+    "Java SE",
+    "Java ME",
+    "Linux/Unix"
+  ],
+  "education": [
+    {
+      "university": "Stanford University",
+      "end_date": "2013/07",
+      "specialisation": "Computer Science",
+      "degree": "Bachelor"
+    }
+  ],
+  "languages": [
+    "English",
+    "German"
+  ]
+}
