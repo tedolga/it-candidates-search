@@ -46,16 +46,26 @@ def get_user_education_info(university_start_year):
 
 
 def get_user_work_experience(university_start_year):
-    work_experience = []
+    work_experiences = []
     work_start_year = university_start_year + random.randint(4, 8)
-    datetime.datetime.now().year
-    return work_experience
+    current_year = datetime.datetime.now().year
+    counter = work_start_year
+    while counter <= current_year:
+        work_experience = {}
+        work_experience['start_year'] = counter
+        counter = counter + random.randint(1, 15)
+        work_experience['current_job'] = 'true' if (counter > current_year) else 'false'
+        work_experience['end_year'] = counter if (counter <= current_year) else ''
+        work_experience['company'] = get_random_file_line(companies_file)
+        work_experiences.append(work_experience)
+    return work_experiences
 
 
 users = []
 first_names_file = 'dictionaries/first_names.csv'
 last_names_file = 'dictionaries/last_names.csv'
 university_file = 'dictionaries/universities.csv'
+companies_file = 'dictionaries/companies.csv'
 for counter in range(1, 10):
     user = {}
     user['first_name'] = get_random_file_line(first_names_file)
@@ -64,11 +74,7 @@ for counter in range(1, 10):
     user['age'] = age
     university_start_year = get_university_start_year(age)
     user['education'] = get_user_education_info(university_start_year)
-    job = {}
-    job['company'] = 'Grid Gain'
-    workExperience = []
-    workExperience.append(job)
-    user['work_experience'] = workExperience
+    user['work_experience'] = get_user_work_experience(university_start_year)
     users.append(user)
 
 jsonData = json.dumps(users)
