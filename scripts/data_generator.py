@@ -7,6 +7,7 @@ import os
 def get_random_file_line(file_name):
     file = open(file_name, 'r')
     lines = file.read().splitlines()
+    file.close()
     return random.choice(lines)
 
 
@@ -55,7 +56,7 @@ def get_user_work_experience(university_start_year):
         work_experience['start_year'] = year_counter
         year_counter = year_counter + random.randint(1, 15)
         work_experience['current_job'] = 'true' if (year_counter > current_year) else 'false'
-        work_experience['end_year'] = year_counter if (year_counter <= current_year) else ''
+        work_experience['end_year'] = year_counter if (year_counter <= current_year) else None
         work_experience['company'] = get_random_file_line(companies_file)
         work_experiences.append(work_experience)
     it_specialization = random.choices(it_specializations, weights=[7, 5, 2, 2])[0]
@@ -80,13 +81,13 @@ def get_user_work_experience(university_start_year):
     return work_experiences
 
 
-users = []
 first_names_file = 'dictionaries/first_names.csv'
 last_names_file = 'dictionaries/last_names.csv'
 university_file = 'dictionaries/universities.csv'
 companies_file = 'dictionaries/companies.csv'
 it_specializations = ['dev', 'test', 'ba', 'cm']
-for counter in range(1, 10):
+data_lines = []
+for counter in range(1, 101):
     user = {}
     user['first_name'] = get_random_file_line(first_names_file)
     user['last_name'] = get_random_file_line(last_names_file)
@@ -95,12 +96,13 @@ for counter in range(1, 10):
     university_start_year = get_university_start_year(age)
     user['education'] = get_user_education_info(university_start_year)
     user['work_experience'] = get_user_work_experience(university_start_year)
-    users.append(user)
-
-jsonData = json.dumps(users)
+    index_command = {'index': {'_index': 'hr_system', '_type': 'candidates', '_id': str(counter)}}
+    data_lines.append(json.dumps(index_command) + "\n")
+    data_lines.append(json.dumps(user) + "\n")
 
 data_path = os.curdir + '\data'
 if not os.path.exists(data_path):
     os.makedirs(data_path)
-output = open('data/users.json', 'w')
-output.write(jsonData)
+output = open('data/users.index', 'w')
+output.writelines(data_lines)
+output.close()

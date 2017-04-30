@@ -1,0 +1,42 @@
+{
+  "mappings": {
+    "candidates": {
+      "_all": {"enabled": false},
+      "properties": {
+        "first_name": {"type": "text"},
+        "last_name": {"type": "text"},
+        "age": {"type": "integer"},
+        "education": {
+          "type": "nested",
+          "properties": {
+            "university": {"type": "keyword"},
+            "end_year": {
+              "type": "date",
+              "format": "yyyy"
+            },
+            "degree": {"type": "keyword"}
+          }
+        },
+        "work_experience": {
+          "type": "nested",
+          "properties": {
+            "start_year": {
+              "type": "date",
+              "format": "yyyy"
+            },
+            "end_year": {
+              "type": "date",
+              "format": "yyyy"
+            },
+            "company": {"type": "keyword"},
+            "position": {"type": "keyword"},
+            "current_job": {"type": "boolean"}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
