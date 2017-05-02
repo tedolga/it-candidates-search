@@ -1,2 +1,2 @@
-Business Analyst
-BA, Senior BA
+Business Analyst:ba
+BA, Senior BA:ba

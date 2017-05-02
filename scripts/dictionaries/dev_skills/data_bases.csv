@@ -1,0 +1,6 @@
+technologies,java,c,php,javascript,c#,.net
+PostgreSQL,1,1,0,0,1,1
+MySQL,1,1,0,0,1,1
+OracleDB,1,0,0,0,0,0
+MSSQL,0,1,0,0,1,1
+Derby,1,1,1,1,1,1

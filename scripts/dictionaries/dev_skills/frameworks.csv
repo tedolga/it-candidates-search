@@ -1,0 +1,17 @@
+technologies,java,c,php,javascript,c#,.net
+Hibernate,1,0,0,0,0,0
+JPA,1,0,0,0,0,0
+Spring,1,0,0,0,0,0
+Spring Security,1,0,0,0,0,0
+Spring MVC,1,0,0,0,0,0
+JMS,1,0,0,0,0,0
+EMS,1,0,0,0,0,0
+Web Services,1,1,1,1,0,0
+SOAP,1,1,1,1,0,0
+Cassandra:Apache Cassandra,1,0,0,0,0,0
+Hadoop:Apache Hadoop,1,0,0,0,0,0
+Elastic Search,1,0,1,1,0,0
+ELK,1,0,1,1,0,0
+TIBCO,1,0,0,0,0,0
+EJB,1,0,0,0,0,0
+Apache Kafka,1,0,0,0,0,0

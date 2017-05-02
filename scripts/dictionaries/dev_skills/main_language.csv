@@ -1,0 +1,7 @@
+technologies,java,c,php,javascript,c#,.net
+Java:Java SE:Java EE:Java 6:Java 7:Java8,1,0,0,0,0,0
+C:C++:C/C++,0,1,0,0,0,0
+PHP,0,0,1,0,0,0
+JavaScript,0,0,0,1,0,0
+C#,0,0,0,0,1,0
+.NET,0,0,0,0,0,1

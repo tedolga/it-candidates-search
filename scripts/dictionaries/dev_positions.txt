@@ -1,8 +1,10 @@
-Junior Java Developer,Java Developer,Senior Java Developer
-Software Developer
-Software Engineer
-PHP Developer, Web Developer
-Java Script Developer
-Javascript Developer
-C/C++ Developer, Senior C/C++ Developer
-Software Developer (C#), .NET Developer
+Junior Java Developer,Java Developer,Senior Java Developer:dev:java
+Software Developer:dev:any
+Software Engineer:dev:any
+Developer,Senior Developer:dev:any
+PHP Developer, Web Developer:dev:php
+Java Script Developer:dev:javascript
+Javascript Developer:dev:javascript
+C/C++ Developer, Senior C/C++ Developer:dev:c
+Software Developer (C#):dev:c#
+.NET Developer:dev:.net

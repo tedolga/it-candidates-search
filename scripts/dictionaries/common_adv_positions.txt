@@ -1,4 +1,4 @@
-Scrum Master
-Team Lead
-PM
-Project Manager
+Scrum Master:manager
+Team Lead:manager
+PM:manager
+Project Manager:manager

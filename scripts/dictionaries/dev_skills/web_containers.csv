@@ -1,0 +1,7 @@
+technologies,java,c,php,javascript,c#,.net
+Jetty,1,0,1,1,0,0
+Apache Tomcat:Tomcat:Tomcat 6:Tomcat 7:Tomcat 8,1,0,1,1,0,0
+JBoss,1,0,1,1,0,0
+Apache Karaf:Karaf,1,0,1,1,0,0
+WebLogic,1,0,1,1,0,0
+WebSphere,1,0,1,1,0,0

@@ -1,5 +1,5 @@
-Dev Lead
-Tech Lead
-Technical Lead
-Architect
-Delivery manager
+Dev Lead:dev
+Tech Lead:dev
+Technical Lead:dev
+Architect:dev
+Delivery manager:manger
