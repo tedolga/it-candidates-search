@@ -1,5 +1,17 @@
-Dev Lead:dev
-Tech Lead:dev
-Technical Lead:dev
-Architect:dev
-Delivery manager:manger
+Dev Lead:dev:c
+Dev Lead:dev:c#
+Dev Lead:dev:java
+Dev Lead:dev:.net
+Tech Lead:dev:c
+Tech Lead:dev:c#
+Tech Lead:dev:java
+Tech Lead:dev:.net
+Technical Lead:dev:java
+Technical Lead:dev:c
+Technical Lead:dev:c#
+Technical Lead:dev:.net
+Architect:dev:java
+Architect:dev:c
+Architect:dev:c#
+Architect:dev:.net
+Delivery manager:manager

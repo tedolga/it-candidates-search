@@ -30,7 +30,8 @@
             },
             "company": {"type": "keyword"},
             "position": {"type": "keyword"},
-            "current_job": {"type": "boolean"}
+            "current_job": {"type": "boolean"},
+            "technologies": {"type": "keyword"}
           }
         }
       }

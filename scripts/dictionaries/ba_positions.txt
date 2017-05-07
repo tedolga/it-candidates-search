@@ -1,2 +1,4 @@
 Business Analyst:ba
 BA, Senior BA:ba
+System Analyst:ba
+Functional Analyst:ba

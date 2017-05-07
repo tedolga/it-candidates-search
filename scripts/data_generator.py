@@ -47,17 +47,26 @@ def get_user_education_info(university_start_year):
 
 
 def get_technologies_list(file_name, specialization, max_count, mandatory):
-    result = []
+    mid_result = []
     if not mandatory:
         add_skill = random.choice([False, True])
         if not add_skill:
-            return result
+            return mid_result
 
     file = open(file_name, 'r')
     reader = csv.DictReader(file)
     for row in reader:
         if row[specialization] == '1':
-            result.extend(random.choices(row['technologies'].split(sep=':'), k=random.randint(1, max_count)))
+            mid_result.append(random.choice(row['technologies'].split(sep=':')))
+    if len(mid_result) == 0:
+        return mid_result
+    tech_count = random.randint(1, max_count if max_count <= len(mid_result) else len(mid_result))
+    result = []
+    while len(result) < tech_count:
+        tech = random.choice(mid_result)
+        result.append(tech)
+        mid_result.remove(tech)
+    return result
 
 
 def add_positions_info(work_experiences):
@@ -87,12 +96,17 @@ def add_positions_info(work_experiences):
 def get_project_technologies(position):
     result = []
     spec = position_spec_map[position]
-    spec_files_path = '{0}\dictionaries\{1}_skills'.format(os.curdir, spec['main'])
+    sub_spec = spec['main']
+    if 'dev' == spec['main']:
+        sub_spec = spec['sub'] if spec['sub'] != 'any' else random.choice(['java', 'c', 'c#', '.net'])
+    spec_files_path = '{0}/dictionaries/{1}_skills'.format(os.curdir, spec['main'])
     spec_files = os.listdir(spec_files_path)
     for file_name in spec_files:
         skill_info = skills_map[file_name.replace('.csv', '')]
-        file = open(file_name, 'r')
-        if ' dev' == spec['main']:
+        result.extend(
+            get_technologies_list(spec_files_path + '/' + file_name, sub_spec, skill_info['max_count'],
+                                  skill_info['mandatory']))
+    return result
 
 
 def get_user_work_experience(university_start_year):
@@ -122,7 +136,7 @@ def get_position_spec_map():
             positions = columns[0].split(',')
             spec = {'main': columns[1], 'sub': None if len(columns) < 3 else columns[2]}
             for position in positions:
-                result_map[position] = [spec]
+                result_map[position] = spec
     return result_map
 
 
@@ -141,7 +155,12 @@ skills_map = {'data_bases': {'max_count': 2, 'mandatory': False},
               'web_containers': {'max_count': 2, 'mandatory': False},
               'web_ui': {'max_count': 3, 'mandatory': False},
               'building_tools': {'max_count': 2, 'mandatory': False},
+              'ba_tech': {'max_count': 4, 'mandatory': True},
+              'dev_methodologies': {'max_count': 3, 'mandatory': True},
+              'office': {'max_count': 3, 'mandatory': False},
+              'req_docs': {'max_count': 3, 'mandatory': False}
               }
+
 data_lines = []
 for counter in range(1, 101):
     user = {}
