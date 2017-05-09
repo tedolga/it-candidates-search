@@ -28,10 +28,10 @@
               "type": "date",
               "format": "yyyy"
             },
-            "company": {"type": "keyword"},
-            "position": {"type": "keyword"},
+            "company": {"type": "text"},
+            "position": {"type": "text"},
             "current_job": {"type": "boolean"},
-            "technologies": {"type": "keyword"}
+            "technologies": {"type": "text"}
           }
         }
       }
