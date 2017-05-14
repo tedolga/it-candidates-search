@@ -1,20 +1,50 @@
 {
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "shingle_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": {
+            "shingle_filter": {
+              "type": "shingle",
+              "min_shingle_size": "2",
+              "max_shingle_size": "3",
+              "output_unigrams" : false
+            }
+          }
+        }
+      }
+    }
+  },
   "mappings": {
     "candidates": {
-      "_all": {"enabled": false},
+      "_all": {
+        "enabled": false
+      },
       "properties": {
-        "first_name": {"type": "text"},
-        "last_name": {"type": "text"},
-        "age": {"type": "integer"},
+        "first_name": {
+          "type": "text"
+        },
+        "last_name": {
+          "type": "text"
+        },
+        "age": {
+          "type": "integer"
+        },
         "education": {
           "type": "nested",
           "properties": {
-            "university": {"type": "keyword"},
+            "university": {
+              "type": "keyword"
+            },
             "end_year": {
               "type": "date",
               "format": "yyyy"
             },
-            "degree": {"type": "keyword"}
+            "degree": {
+              "type": "keyword"
+            }
           }
         },
         "work_experience": {
@@ -28,10 +58,24 @@
               "type": "date",
               "format": "yyyy"
             },
-            "company": {"type": "text"},
-            "position": {"type": "text"},
-            "current_job": {"type": "boolean"},
-            "technologies": {"type": "text"}
+            "company": {
+              "type": "text",
+              "analyzer": "shingle_analyzer",
+              "search_analyzer" : "shingle_analyzer"
+            },
+            "position": {
+              "type": "text",
+              "analyzer": "shingle_analyzer",
+              "search_analyzer" : "shingle_analyzer"
+            },
+            "current_job": {
+              "type": "boolean"
+            },
+            "technologies": {
+              "type": "text",
+              "analyzer": "shingle_analyzer",
+              "search_analyzer" : "shingle_analyzer"
+            }
           }
         }
       }
