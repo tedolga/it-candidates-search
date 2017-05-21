@@ -1,6 +1,6 @@
 package com.roi.poc.controller;
 
-import com.roi.poc.dto.Candidate;
+import com.roi.poc.dto.domain.Candidate;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +16,8 @@ import java.util.List;
 @EnableAutoConfiguration
 @RequestMapping("/candidates")
 public class SearchController {
-    @RequestMapping(value = "/name_search", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Collection<Candidate> searchCandidatesByName(@RequestParam String query) {
+    @RequestMapping(value = "/search", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Collection<Candidate> searchCandidates(@RequestParam String query) {
         List<Candidate> candidates = new ArrayList<Candidate>();
         Candidate dude = new Candidate();
         dude.setFirstName("Vasya");
