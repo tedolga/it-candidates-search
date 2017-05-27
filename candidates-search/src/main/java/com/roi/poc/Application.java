@@ -2,9 +2,11 @@ package com.roi.poc;
 
 import com.roi.poc.controller.SearchController;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class SearchMain {
+@SpringBootApplication
+public class Application {
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(SearchController.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
