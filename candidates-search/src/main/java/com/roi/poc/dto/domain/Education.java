@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Education {
     private String university;
-    @JsonProperty("degree")
+    @JsonProperty("end_year")
     private Integer endYear;
     private String degree;
 

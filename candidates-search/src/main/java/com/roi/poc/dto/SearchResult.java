@@ -5,23 +5,23 @@ import com.roi.poc.dto.domain.Candidate;
 import java.util.List;
 
 public class SearchResult {
-    private Integer total;
+    private Long total;
     private Integer pageNumber;
     private Integer pageSize;
     private List<Candidate> result;
 
-    public SearchResult(Integer total, Integer pageNumber, Integer pageSize, List<Candidate> result) {
+    public SearchResult(Long total, Integer pageNumber, Integer pageSize, List<Candidate> result) {
         this.total = total;
         this.pageNumber = pageNumber;
         this.pageSize = pageSize;
         this.result = result;
     }
 
-    public Integer getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 

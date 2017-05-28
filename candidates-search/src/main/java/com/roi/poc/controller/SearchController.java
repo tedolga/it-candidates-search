@@ -22,4 +22,6 @@ public class SearchController {
     public SearchResult searchCandidates(@RequestParam String query, PageRequest pageRequest) {
         return searchService.getSearchResults(query, pageRequest);
     }
+
+
 }

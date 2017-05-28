@@ -11,6 +11,7 @@ public class Candidate {
     private String lastName;
     private Byte age;
     private List<Education> education;
+    @JsonProperty("work_experience")
     private List<WorkExperience> workExperienceList;
 
     public String getFirstName() {
