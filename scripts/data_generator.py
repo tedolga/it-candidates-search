@@ -147,7 +147,7 @@ companies_file = 'dictionaries/companies.csv'
 it_specializations = ['dev', 'test', 'ba', 'cm']
 position_spec_map = get_position_spec_map()
 skills_map = {'data_bases': {'max_count': 2, 'mandatory': False},
-              'frameworks': {'max_count': 4, 'mandatory': False},
+              'frameworks': {'max_count': 3, 'mandatory': False},
               'main_language': {'max_count': 1, 'mandatory': True},
               'os': {'max_count': 3, 'mandatory': False},
               'programming_languages': {'max_count': 2, 'mandatory': False},
@@ -158,7 +158,11 @@ skills_map = {'data_bases': {'max_count': 2, 'mandatory': False},
               'ba_tech': {'max_count': 4, 'mandatory': True},
               'dev_methodologies': {'max_count': 3, 'mandatory': True},
               'office': {'max_count': 3, 'mandatory': False},
-              'req_docs': {'max_count': 3, 'mandatory': False}
+              'req_docs': {'max_count': 3, 'mandatory': False},
+              'cm': {'max_count': 3, 'mandatory': True},
+              'no_sql': {'max_count': 2, 'mandatory': False},
+              'vcs': {'max_count': 2, 'mandatory': False},
+              'virtualization': {'max_count': 1, 'mandatory': False}
               }
 
 data_lines = []
